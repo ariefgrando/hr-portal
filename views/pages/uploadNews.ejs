@@ -1,0 +1,110 @@
+<% include ../partials/head %>
+<% include ../partials/leftmenu %>
+<!-- **********************************************************************************************************************************************************
+   MAIN CONTENT
+   *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+   <section class="wrapper site-min-height">
+      <h3><i class="fa fa-angle-right"></i> UPLOAD NEWS</h3>
+      <hr>
+      <!-- COMPLEX TO DO LIST -->			
+      <div class="row mt">
+         <div class="col-md-12">
+            <section class="task-panel tasks-widget">
+               <div class="panel-heading">
+                  <div class="pull-left">
+                     <h5><i class="fa fa-tasks"></i> &nbsp;&nbsp;Compose News</h5>
+                  </div>
+                  <br>
+               </div>
+               <div class="panel-body">
+                  <div class="task-content">
+                     <script type="text/javascript" src="assets/js/tinymce/tinymce.min.js"></script>
+                     <script type="text/javascript">
+                        tinymce.init({
+                             selector: "textarea",
+                        	plugins: [
+                        		"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        		"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        		"table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+                        	],
+                        
+                        	toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+                        	toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+                        	toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+                        
+                        	menubar: false,
+                        	toolbar_items_size: 'small',
+                        
+                        	style_formats: [
+                        		{title: 'Bold text', inline: 'b'},
+                        		{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                        		{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                        		{title: 'Example 1', inline: 'span', classes: 'example1'},
+                        		{title: 'Example 2', inline: 'span', classes: 'example2'},
+                        		{title: 'Table styles'},
+                        		{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                        	],
+				setup: function (editor) {
+					editor.on('change', function () {
+						tinymce.triggerSave();
+					});
+				}
+                        
+                        });
+                     </script>
+
+                     <div class='text' id='timeMsg'>
+                     </div>
+
+                     <br/>
+
+		     <form id='fNews'>
+			     <input type="text" class="form-control" name='subject' id='subject' placeholder='Isi Subject Berita di field ini ......'><br/>
+
+			     <textarea id="content" style="width:100%"></textarea>
+
+			     <br/>
+
+			     <div class="row">
+				<div class='col-sm-12'>
+				   <input type='text' class="form-control" id='bataswaktu' />
+				</div>
+			     </div>
+
+			     <br/><br/>
+			     <button type="button" class="btn btn-theme" id='uplNews'>Upload</button>
+		     </form>
+
+                  </div>
+               </div>
+            </section>
+         </div>
+         <!-- /col-md-12-->
+      </div>
+      <!-- /row -->
+   </section>
+   <! --/wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<script>
+   var liveClock = function(servertime) {
+              var currDateTime = new Date();
+              var addLeadingZero = function(s) {
+                  return (s<10)?('0'+s):s;    
+              };
+              var formattedDate = function(date) {
+                  var h = date.getHours(), hour = (h<1)?(h+1):((h>12)?(h-12):h), a = (h<12)?'am':'pm';
+                  return "<div class='faq-icon'><div class='faq-number' style='float:left; background-color:#3366FF;' id='tglx'>"+date.getDate()+"</div>"+"<div class='faq-number' style='float:left; background-color:#3333FF;' id='blnx'>"+(date.getMonth()+1)+"</div>"+"<div class='faq-number' style='float:left; background-color:#3300FF;' id='thnx'>"+date.getFullYear().toString().substr(2,2)+"</div>"+"<div class='faq-number' style='float:left;' id='jamx'>"+hour+"</div>"+"<div class='faq-number' style='float:left;' id='minx'>"+addLeadingZero(date.getMinutes())+"</div>"+"<div class='faq-number' style='float:left;' id='secx'>"+addLeadingZero(date.getSeconds())+"</div>"+"<div class='faq-number' style='float:left; background-color:red;'>"+a+"</div></div>";    
+              };
+              var setDateTime = function() {
+                  currDateTime.setSeconds(currDateTime.getSeconds()+1);
+                  $('#timeMsg').html(formattedDate(currDateTime));
+                  return false;    
+              };
+              var everySec = setInterval(setDateTime, 1000);
+          };
+   liveClock();
+</script>
+<% include ../partials/footer %>

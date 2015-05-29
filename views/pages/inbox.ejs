@@ -1,0 +1,67 @@
+<% include ../partials/head %>
+
+<% include ../partials/leftmenu %>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+      		<div class="row mt">
+      			<div class="col-lg-6 col-md-6 col-sm-12">
+      				
+				<div class="showback">
+				<h4 class="mb"><i class="fa fa-angle-right"></i> Kirim-kirim Pesan</h4>
+				      <form class="form-horizontal style-form" method="get">
+					  <div class="form-group">
+					      <label class="col-sm-2 col-sm-2 control-label">To</label>
+					      <div class="col-sm-10">
+						  <input type="text" class="form-control" name='to' id='to'>
+					      </div>
+					  </div>
+					  <div class="form-group">
+					      <label class="col-sm-2 col-sm-2 control-label">Subject</label>
+					      <div class="col-sm-10">
+						  <input type="text" class="form-control" name="subjectChat" id='subjectChat'>
+					      </div>
+					  </div>
+					  <div class="form-group">
+					      <label class="col-sm-2 col-sm-2 control-label">Message</label>
+					      <div class="col-sm-10">
+						  <textarea  class="form-control" id='chatContent'></textarea>
+					      </div>
+					  </div>
+					  <div class="form-group">
+					      <label class="col-sm-2 col-sm-2 control-label">  </label>
+					      <div class="col-sm-10">
+						  <button class='btn btn-theme' type='button' id='sendChat'>Send</button>
+					      </div>
+					  </div>
+				      </form>
+				  </div>      				
+      				
+      				
+      			</div><! --/col-lg-6 -->
+      			
+      			
+      			<div class="col-lg-6 col-md-6 col-sm-12">
+      				<! -- ALERTS EXAMPLES -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Riwayat Pesan</h4>
+							<div class="alert alert-success"><b>Well done!</b> You successfully read this important alert message.</div>
+							<div class="alert alert-info"><b>Heads up!</b> This alert needs your attention, but it's not super important.</div>
+							<div class="alert alert-warning"><b>Warning!</b> Better check yourself, you're not looking too good.</div>
+							<div class="alert alert-danger"><b>Oh snap!</b> Change a few things up and try submitting again.</div>      				
+      				</div><!-- /showback -->
+      				
+      			
+      			</div><!-- /col-lg-6 -->
+      			
+      		</div><!--/ row -->
+          </section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+
+
+<% include ../partials/footer %>

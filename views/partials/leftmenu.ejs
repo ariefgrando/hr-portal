@@ -1,0 +1,77 @@
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="assets/img/pegawai/<%= data.employeeNumber %>.png" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered"><%= data.displayName %><input type='hidden' name='nid' id='nid' value='<%= data.employeeNumber %>'><input type='hidden' name='namauser' id='namauser' value='<%= data.displayName %>'></h5>
+
+                  <li class="mt">
+                      <a href="/home">
+                          <i class="fa fa-home"></i>
+                          <span>Home</span>
+                      </a>
+                  </li>
+              	  	
+                  <li class="sub-menu">
+                      <a href="index.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                      <ul class="sub">
+				
+			  <%
+				if(datarole.role=="sup"){
+			  %>
+				<li><a  href="/cpanel">Administrator</a></li>
+			  <%
+				}
+			  %>
+                          <li><a  href="/presensi">Presensi</a></li>
+                          <li><a  href="/inbox">Inbox</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="/gallery" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Gallery</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="/buku" >
+                          <i class="fa fa-book"></i>
+                          <span>Buku</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Extra Pages</span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="blank.html">SIKOJA</a></li>
+                          <li><a  href="login.html">AMOR</a></li>
+                          <li><a  href="lock_screen.html">SIMKPNAS</a></li>
+						  <li><a  href="lock_screen.html">Malcolm Baldrige</a></li>
+						  <li><a  href="lock_screen.html">PLN MS</a></li>
+						  <li><a  href="lock_screen.html">OPI</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>Peraturan</span>
+                      </a>
+                  </li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->

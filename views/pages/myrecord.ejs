@@ -1,0 +1,99 @@
+<% include ../partials/head %>
+
+<% include ../partials/leftmenu %>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+          	<h3><i class="fa fa-angle-right"></i> RIWAYAT KEHADIRAN</h3>
+          	<hr>		
+			
+		<h4><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> Pilih Riwayat Kehadiran Untuk Bulan Tertentu </h4></br>
+		Bulan &nbsp;&nbsp;
+		<form method='post' action='custompresensi'>
+		<select name='bulan' id='bulan'>
+			<option value='<%=new Date().getMonth()%>' selected><%= new Date().getMonth()+1%>
+		<%
+			for(var b=1; b < 13; b++) {
+			if(b.length<2){
+				b='0'+b;
+			}
+		%>	
+			<option value='<%- b %>'><%- b %>
+		<%
+			}
+		%>
+		</select>
+
+		&nbsp;&nbsp;
+
+		Tahun &nbsp;&nbsp;
+		<select name='tahun' id='tahun'>
+			<option value='<%=new Date().getFullYear()%>'><%- new Date().getFullYear()%>
+		<%
+			for(var t=2012; t < 2021; t++) {
+		%>	
+			<option value='<%- t %>'><%- t %>
+		<%
+			}
+		%>
+		</select>
+
+		&nbsp;&nbsp;<button class='btn btn-theme' type='submit'>Generate</button>
+		</form>
+		<div class="row mt">
+			<div class="col-lg-12">
+                      <div class="content-panel" id='riwayatabsensi'>	
+					<div style='float:right; cursor:pointer;' onclick='printeveryitem("riwayatabsensi")'><i class="fa fa-print"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					&nbsp;&nbsp;<%= data.displayName %> - <%= data.employeeNumber %><br/>
+					&nbsp;&nbsp;<%= data.title %><br/>
+					&nbsp;&nbsp;<%= data.department %><br/>
+					&nbsp;&nbsp;<%= data.physicalDeliveryOfficeName %><br/><br/>
+
+                          <section id="no-more-tables">
+                            <table class="table table-bordered table-striped table-condensed cf">
+                              <thead class="cf">
+                              <tr>
+                                  <th>Tanggal</th>
+                                  <th>Hari</th>
+				  <th>Datang</th>
+				  <th>Pulang</th>
+				  <th>Jam Kerja</th>
+				  <th>Keterangan</th>
+
+                              </tr>
+                              </thead>
+                              <tbody>
+
+				<% for(var i=0; i < data2.length; i++) { %>
+				   <tr>
+				     <td data-title="Tanggal"><%- data2[i].tanggal %></td>
+				     <td data-title="Hari"><%- data2[i].hari %></td>
+				     <td data-title="Datang"><%- data2[i].waktudatang %></td>
+				     <td data-title="Pulang"><%- data2[i].waktupulang %></td>
+				     <td data-title="Jam Kerja"><%- data2[i].jamkerja %></td>
+				     <td data-title="Keterangan"><%- data2[i].keterangan %></td>
+				     
+				   </tr>
+				<% } %>
+
+                              </tbody>
+                          </table>
+                          </section>
+
+
+                  </div><!-- /content-panel -->
+               </div><!-- /col-lg-4 -->			
+		  	</div><!--
+				
+				
+					
+
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,19 @@
+{
+  "name": "portalsdm",
+  "version": "1.0.0",
+  "description": "Portal SDM V2",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.12.2",
+    "express.io": "^1.1.13",
+    "passport-ldapauth": "^0.3.0",
+    "supervisor": "^0.6.0",
+    "ldapauth": "^2.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

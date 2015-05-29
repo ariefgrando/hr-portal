@@ -1,0 +1,197 @@
+<% include ../partials/head %>
+<% include ../partials/leftmenu %>
+<!-- **********************************************************************************************************************************************************
+   MAIN CONTENT
+   *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+   <section class="wrapper">
+      <div class="row">
+      <div class="col-lg-9">
+         <h3><i class="fa fa-angle-right"></i>&nbsp;<font color='#000000'>Employees Communities</font>, <font color='#0099ff'>Knowledge Sharing</font>, <font color='#ff0033'>BrainStorming</font></h3>
+         <hr>
+         <div class="widget">
+            <div class='widget-header'>
+               &nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-info-sign"></i>
+               <h3>Info Admin</h3>
+            </div>
+            <div class="widget-content" id='main_news_placeholder' ng-controller="frontNewsCtrl"  data-ng-init="init()">
+               <!-- DISINI ISI FRONT NEWS, LOAD DENGAN ANGULAR -->
+               <wave-spinner ng-show="prograssing"></wave-spinner>
+               <ul class="messages_layout" id="infoadminbaru" style="display:table;" ng-repeat="x in berita">
+                  <li class="" style="display: table-cell; width: 100%; ">
+                     <div class="message_wrap">
+                        <span class="arrow"></span>
+                        <div class="info"> <a class="name">{{x.subject}}</a> <span class="time">&nbsp;|&nbsp;&nbsp;Uploaded by {{x.created_by }} on {{x.tgl_upload_berita }}</span> <span class="" style="float:right; font-size:11px; font-style:italic;"><i class="icon-pushpin"></i>&nbsp;&nbsp;informasi ini tayang sampai {{x.tgl_akhir_tayang_berita }}</span>&nbsp;&nbsp;</div>
+                        <div class="text" ng-bind-html="x.content | unsafe"></div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="row mt">
+            <div class="col-md-12" id='main_news_placeholder2'>
+               <section class="task-panel tasks-widget">
+               </section>
+            </div>
+         </div>
+         <div class="row mt">
+            <!-- SERVER STATUS PANELS -->
+            <div class="col-md-4 col-sm-4 mb">
+               <div class="white-panel pn donut-chart">
+                  <div class="white-header">
+                     <h5>HOT TOPIC</h5>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6 col-xs-6 goleft">
+                        <p><i class="fa fa-database"></i> 70%</p>
+                     </div>
+                  </div>
+                  <canvas id="serverstatus01" height="120" width="120"></canvas>
+               </div>
+               <! --/grey-panel -->
+            </div>
+            <!-- /col-md-4-->
+            <div class="col-md-4 col-sm-4 mb">
+               <div class="white-panel pn">
+                  <div class="white-header">
+                     <h5>BERITA TERKINI</h5>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6 col-xs-6 goleft">
+                        <p><i class="fa fa-heart"></i> 122</p>
+                     </div>
+                     <div class="col-sm-6 col-xs-6"></div>
+                  </div>
+                  <div class="centered">
+                     <!--img src="assets/img/product.png" width="120"-->
+                  </div>
+               </div>
+            </div>
+            <!-- /col-md-4 -->
+            <div class="col-md-4 mb">
+               <!-- WHITE PANEL - TOP USER -->
+               <div class="white-panel pn" id='listconnected'>
+                  <div class="white-header">
+                     <h5>TOP USER</h5>
+                  </div>
+                  <p class="small mt"><img src="assets/img/ui-zac.jpg" class="img-circle" width="30">&nbsp;&nbsp;Zac Snider</p>
+               </div>
+            </div>
+            <!-- /col-md-4 -->
+         </div>
+         <!-- /row -->
+         <div class="row mt">
+            <!--CUSTOM CHART START -->
+            <!--div class="border-head">
+               <h3>VISITS</h3>
+               </div>
+               <div class="custom-bar-chart">
+               <ul class="y-axis">
+                   <li><span>10.000</span></li>
+                   <li><span>8.000</span></li>
+                   <li><span>6.000</span></li>
+                   <li><span>4.000</span></li>
+                   <li><span>2.000</span></li>
+                   <li><span>0</span></li>
+               </ul>
+               <div class="bar">
+                   <div class="title">JAN</div>
+                   <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
+               </div>
+               <div class="bar ">
+                   <div class="title">FEB</div>
+                   <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
+               </div>
+               <div class="bar ">
+                   <div class="title">MAR</div>
+                   <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
+               </div>
+               <div class="bar ">
+                   <div class="title">APR</div>
+                   <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
+               </div>
+               <div class="bar">
+                   <div class="title">MAY</div>
+                   <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
+               </div>
+               <div class="bar ">
+                   <div class="title">JUN</div>
+                   <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
+               </div>
+               <div class="bar">
+                   <div class="title">JUL</div>
+                   <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
+               </div>
+               </div-->
+            <!--custom chart end-->
+         </div>
+         <!-- /row -->	
+      </div>
+      <!-- /col-lg-9 END SECTION MIDDLE -->
+      <!-- **********************************************************************************************************************************************************
+         RIGHT SIDEBAR CONTENT
+         *********************************************************************************************************************************************************** -->                  
+      <div class="col-lg-3 ds">
+      <!--COMPLETED ACTIONS DONUTS CHART-->
+      <h3>NOTIFICATIONS</h3>
+      <!-- First Action -->
+      <div class="desc">
+         <div class="thumb">
+            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+         </div>
+         <div class="details">
+            <p>
+               <muted>00</muted>
+               <br/>
+               Tidak ada notifikasi terbaru saat ini.<br/>
+            </p>
+         </div>
+      </div>
+      <!--div class="desc">
+         <div class="thumb">
+         	<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+         </div>
+         <div class="details">
+         	<p><muted>2 Minutes Ago</muted><br/>
+         	   <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+         	</p>
+         </div>
+         </div-->
+      <!-- USERS ONLINE SECTION -->
+      <h3>CONNECTED USERS</h3>
+      <!-- First Member -->
+      <div id='onlineuser'>
+         <!--div class="desc">
+            <div class="thumb">
+            	<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+            </div>
+            <div class="details">
+            	<p><a href="#">DIVYA MANIAN</a><br/>
+            	   <muted>Available</muted>
+            	</p>
+            </div>
+            </div-->
+         <div>
+            <!-- CALENDAR-->
+            <div id="calendar" class="mb">
+               <div class="panel green-panel no-margin">
+                  <div class="panel-body">
+                     <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title" style="disadding: none;"></h3>
+                        <div id="date-popover-content" class="popover-content"></div>
+                     </div>
+                     <div id="my-calendar"></div>
+                  </div>
+               </div>
+            </div>
+            <!-- / calendar -->
+         </div>
+         <!-- /col-lg-3 -->
+      </div>
+      <! --/row -->
+   </section>
+</section>
+<!--main content end-->
+<% include ../partials/footer_entrance %>

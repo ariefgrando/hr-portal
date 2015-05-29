@@ -1,0 +1,24 @@
+<% include ../partials/head %>
+
+<% include ../partials/leftmenu %>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+          	<h3><i class="fa fa-angle-right"></i> BUKU</h3>
+          	<hr>		
+				
+				<% data2.forEach(function(name){ %>
+					<%=name.substring(7,300)%>
+				<% }) %>
+				
+					
+
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+
+<% include ../partials/footer %>
